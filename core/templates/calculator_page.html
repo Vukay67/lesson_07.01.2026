@@ -1,0 +1,9 @@
+<form action="" method="post">
+    {% csrf_token %}
+    <input placeholder="Введите первое число" type="number" name="num_1"><br><br>
+    <input placeholder="Введите второе число" type="number" name="num_2"><br><br>
+    <input placeholder="Введите оператор(+ - * /)" type="text" name="oper"><br><br>
+    <button type="submit">Отправить</button>
+</form>
+
+<h3>Ответ: {{ ans }}</h3>

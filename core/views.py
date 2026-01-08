@@ -49,3 +49,26 @@ def task(request):
     }
 
     return render(request, "task.html", context)
+
+def calculator(request):
+    num_1 = float(request.POST.get('num_1'))
+    num_2 = float(request.POST.get('num_2'))
+    oper = request.POST.get('oper')
+
+    if oper == "+":
+        ans = num_1 + num_2
+    elif oper == "-":
+        ans = num_1 - num_2
+    elif oper == "*":
+        ans = num_1 * num_2
+    elif oper == "/":
+        ans = num_1 / num_2
+        
+    context = {
+        'num_1': num_1,
+        'num_2': num_2,
+        'oper': oper,
+        'ans': ans
+    }
+
+    return render(request, "calculator_page.html", context)
