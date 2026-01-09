@@ -51,9 +51,20 @@ def task(request):
     return render(request, "task.html", context)
 
 def calculator(request):
-    num_1 = float(request.POST.get('num_1'))
-    num_2 = float(request.POST.get('num_2'))
+    num_1 = request.POST.get('num_1')
+    num_2 = request.POST.get('num_2')
     oper = request.POST.get('oper')
+    ans = 0
+
+    if num_1 != None:
+        num_1 = int(num_1)
+    else:
+        num_1 = 0
+
+    if num_2 != None:
+        num_2 = int(num_2)
+    else:
+        num_2 = 0
 
     if oper == "+":
         ans = num_1 + num_2
